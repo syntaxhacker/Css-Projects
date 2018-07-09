@@ -1,0 +1,241 @@
+/* .grid-container{
+    display: grid;
+} */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+
+body,html{
+    height: 120%;
+}
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: grid;
+    grid-template-rows: auto 50px;
+    grid-template-columns: 12% auto;
+    grid-template-areas: 
+        "sidebar right"
+        "footer footer";
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+    float: right;
+}
+ul li{
+    display: inline;
+}
+ul li a {
+    color: white;
+    padding: 15px;
+}
+#logo{
+    padding: 15px;
+    margin-left: 15px;
+    background-color: #F3F1C7;
+    /* color: #41c7c7; */
+    color: #EC407A;
+    text-align: center;
+    font-weight: bold;
+    display: inline-block;
+
+}
+header{
+    background: #41c7c7;
+    grid-area: head;
+    display: grid;
+    grid-template-columns: fit-content(20%)auto;
+}
+
+section#hero{
+    background-color: #41c7c7;
+    padding: 2em;
+    border-top: 5px solid white;
+    grid-area: hero;
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+
+}
+
+.content h1{
+    text-transform: uppercase;
+    color: white;
+    
+}
+.content p{
+    color: white;
+}
+img{
+    width: 100%;
+    background-size: contain;
+    margin: 0 auto;
+}
+
+#unsplash{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
+.sidebar{
+    grid-area: sidebar;
+    background: #e74c3c;
+    color: white;
+    padding: 1em;
+}
+.main{
+    grid-area: right;
+    grid-template-rows: 51px fit-content(30%) 40% auto;
+    display: grid;
+    grid-template-areas: 
+        "head"
+        "hero"
+        "Reinvention"
+        "features"
+}
+footer{
+    grid-area: footer;
+    background: #2c3e50;
+    color: white;
+}
+#features{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    text-align: center;
+    align-items: center;
+    grid-area: features;
+    /* justify-items: center; */
+}
+
+#features i{
+    font-size: 2em;
+    color: #EC407A;
+}
+ul#features{
+    margin: 0;
+    padding: 0;
+}
+ul#features li{
+    background-color: lightgray;;
+    padding: 1em;
+    /* width: 70% */
+}
+
+ul#features li{
+    color: black;
+    font-size: 15px;
+    line-height: 23px;
+}
+
+ul#features li:nth-child(odd){
+    background-color: #fff;
+}
+
+section#Reinvention{
+    background-color: rgb(121, 117, 117);
+    padding: 2em;
+    display: grid;
+    grid-area: Reinvention;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+}
+h2{
+    color: white;
+}
+
+#svg-mount{
+    width:200px;
+    align-self: center;
+}
+
+
+@media screen and (max-width:60em){
+    .sidebar{
+        display: none;
+    }
+
+    body{
+        grid-template-columns: auto;
+        grid-template-areas: 
+            "right"
+            "footer";
+    }
+    
+    .main{
+        grid-template-rows: auto fit-content(30%) 40% auto;
+        grid-template-areas: 
+            "head"
+            "hero"
+            "Reinvention"
+            "features"
+            
+           
+    }
+
+    #features{
+   
+        grid-template-columns: repeat(1,auto);
+        grid-template-rows: repeat(1,auto);
+    }
+    #logo{
+        background-color: rgba(255, 255, 255, 0);
+        color: #F3F1C7
+    }
+    
+    header{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2,auto);
+    }
+    #logo{
+        margin-left: 0;
+
+     }
+
+    nav ul{
+        float: none; 
+        padding: 5px 25px; 
+        /* margin: 0;
+        background-color: #fff;
+         /* width: 100%;  */
+        border-top: 5px solid white; 
+    }
+    nav ul li a{
+        width: calc(25%-35px);
+        display: inline-block; 
+        font-size: .9em;
+    }
+    section#hero{
+        grid-template-columns: auto;
+        text-align: center;
+    }
+    footer p{
+        color: #fff;
+        text-align: center;
+    }
+/* ul#features li:nth-child(3){
+    grid-column: 1/span 2;
+    background-color: lightgray;
+} */
+
+}
+
+/* @media screen and(max-width:40em){
+
+    .main{
+        grid-template-rows: auto fit-content(30%) 40% auto;
+        
+    }
+
+    header{
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2,auto);
+    }
+    #logo{
+        background-color: #EC407A;
+        color: #e74c3c;
+    }
+} */
+
+
+
